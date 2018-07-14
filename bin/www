@@ -14,12 +14,13 @@ var http = require('http');
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+app.listen(port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app).listen(3000, '138.197.68.53');
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
