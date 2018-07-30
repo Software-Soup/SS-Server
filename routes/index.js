@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.post('/RESTTest', function(req, res){
+  res.json({ name: 'RESTTest', value: 'Calculate' });
+});
+
 module.exports = router;
