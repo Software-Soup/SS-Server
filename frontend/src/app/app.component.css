@@ -1,0 +1,19 @@
+.social-card {
+    max-width: 400px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.youtube-card {
+    background-color: #ff0000;
+    color: white;
+}
+
+.twitter-card {
+    background-color: #1DA1F2;
+    color: white;
+}
+
+.white-text {
+    color: white;
+}
