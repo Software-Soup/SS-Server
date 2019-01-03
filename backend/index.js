@@ -12,9 +12,9 @@
  const port = 3000;
 
  app.use(express.static('../frontend/dist/SoftwareSoupNet'))
-
+ 
  app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('Hello World!');
  });
 
  app.listen(port, () => console.log('Software Soup Backend listening on port' + port));
