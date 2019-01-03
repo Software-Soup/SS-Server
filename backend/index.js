@@ -7,6 +7,18 @@
  * 
  */
 
+ const express = require('express');
+ const app = express();
+ const port = 8080;
+
+ app.use(express.static('../frontend/dist/SoftwareSoupNet'))
+
+ app.get('/', (req, res) => {
+    res.send('Hello World!')
+ });
+
+ app.listen(port, () => console.log('Software Soup Backend listening on port' + port));
+
  /**
   * start server
   * page requests go to frontend/dist/
