@@ -1,16 +1,27 @@
 {
   "name": "softwaresoupnet",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "The Software Soup website",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoftwareSoup/SoftwareSoupNet.git"
+  },
+  "keywords": [
+    "soup",
+    "softwaresoup",
+    "software"
+  ],
+  "author": "Daquaris Chadwick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SoftwareSoup/SoftwareSoupNet/issues"
+  },
+  "homepage": "https://github.com/SoftwareSoup/SoftwareSoupNet#readme",
   "dependencies": {
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "~4.16.0",
-    "http-errors": "~1.6.2",
-    "morgan": "^1.9.1",
-    "pug": "2.0.0-beta11"
+    "express": "^4.17.1"
   }
 }
