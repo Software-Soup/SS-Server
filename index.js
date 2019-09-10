@@ -1,5 +1,22 @@
 var express = require('express');
 var app = express();
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/wwwsoupnet');
+var db = mongoose.connection;
+
+db.on('error',
+	function()
+	{
+		console.log('connection error');
+	}
+);
+db.once('open', 
+	function()
+	{
+		console.log('mongo working!');
+	}
+);
 
 app.get('/ping', 
     function(req, res) 
@@ -16,9 +33,8 @@ app.get('/ping/:id',
 );
 
 app.listen(3000, 
-    function(req, res)
+    function()
     {
-        res.send('Hello World!');
+        console.log('Listening on port 3000');
     }
 );
-console.log('Listening on port 3000');
