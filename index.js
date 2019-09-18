@@ -1,15 +1,29 @@
 var express = require('express');
+var cors = require('cors');
+var router = require('./routes/api');
+var mongoose = require('mongoose');
+var fs = require('fs');
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
+var config = fs.readFileSync('config.json')
+config = JSON.parse(config);
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/wwwsoupnet', {useNewUrlParser: true});
-var db = mongoose.connection;
+app.use(express.static(__dirname + '/public'));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(cors({origin: '*'}));
+app.use('/api', router);
+
+mongoose.connect('mongodb://localhost/wwwsoupnet', {useNewUrlParser: true})
+        .then(() => {
+            console.log(' Connected to MongoDB successfully ');
+        })
+        .catch(() => {
+            console.error(' Error connecting to database ');
+        });
 
 app.get('/',
-    function(req, res)
-    {
+    (req, res) => {
         res.render('index', {title: 'Software Soup Home'});
     }
 );
